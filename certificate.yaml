@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: flask-app-tls
+  namespace: default
+spec:
+  secretName: flask-app-tls
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: demo.kubeace.com
+  dnsNames:
+  - demo.kubeace.com
